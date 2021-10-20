@@ -19,44 +19,47 @@ public class RobotDriveSystem extends SubsystemBase {
 
  //Drive
 
-
+//instantiate left and right side drive and create drive groups
      Spark leftF = new Spark(1);
      //Spark leftR = new Spark(1);
-    SpeedControllerGroup m_left = new SpeedControllerGroup(leftF, leftR);
+//named "M" for motor
+    SpeedControllerGroup m_left = new SpeedControllerGroup(leftF);
   
      Spark rightF = new Spark(2);
      //Spark rightR = new Spark(2);
-     SpeedControllerGroup m_right = new SpeedControllerGroup(rightF, rightR);
-  
+     SpeedControllerGroup m_right = new SpeedControllerGroup(rightF);
+//differential drive, aka west coast is the type of drive base we have 
      DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
 
  //Encoders for drive
+ //encoders count motor rotations
  Encoder lEncoder = new Encoder(Constants.lEncoder1, Constants.lEncoder2, false, Encoder.EncodingType.k4X);
  Encoder rEncoder = new Encoder(Constants.rEncoder1, Constants.rEncoder2, false, Encoder.EncodingType.k4X);
-
+//gyro tells us what dirictions we are facing
  AnalogGyro gyro = new AnalogGyro(Constants.gyro);
- 
+//gyros can be sensitive, so we set sensitivity to offset any issues with that
  public void DriveTrain() {
    gyro.setSensitivity(0.0065);
  }
 
  //Standard driving
+ //drives with joystick
  public void drive(double y, double x){
    m_drive.arcadeDrive(-y, -x);
  }
- 
+//sets motor speeds to 0 to stop
  public void stop(){
   m_drive.arcadeDrive(0, 0);
  }
-
+//tells us our gyro angle
  public double getGyro() {
    return gyro.getAngle() % 360.0;
  }
-
+//resets gyro
  public void resetGyro() {
    gyro.reset();
  }
- 
+ //gets encoder value (rotations)
  public double getEncoderLeft(){
    System.out.println(lEncoder.getDistance());
    return lEncoder.getDistance();
@@ -65,7 +68,7 @@ public class RobotDriveSystem extends SubsystemBase {
  public double getEncoderRight(){
    return rEncoder.getDistance();
  }
- 
+ //reset encoder numbers to 0 rotations
  public void resetBothEncoders(){
    lEncoder.reset();
    rEncoder.reset();
