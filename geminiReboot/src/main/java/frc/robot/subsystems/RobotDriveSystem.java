@@ -21,11 +21,11 @@ public class RobotDriveSystem extends SubsystemBase {
 
 
      Spark leftF = new Spark(1);
-     Spark leftR = new Spark(1);
+     //Spark leftR = new Spark(1);
     SpeedControllerGroup m_left = new SpeedControllerGroup(leftF, leftR);
   
      Spark rightF = new Spark(2);
-     Spark rightR = new Spark(2);
+     //Spark rightR = new Spark(2);
      SpeedControllerGroup m_right = new SpeedControllerGroup(rightF, rightR);
   
      DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
