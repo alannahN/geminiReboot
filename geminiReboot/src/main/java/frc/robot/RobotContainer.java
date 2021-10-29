@@ -18,9 +18,10 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
  * subsystems, commands, and button mappings) should be declared here.
  */
 public class RobotContainer {
+  //initializes main controller and aux controller
   public static XboxController driveController = new XboxController(0);
   public static XboxController auxController = new XboxController(1);
-
+//initializes buttons on controllers
   public static Trigger leftTrigger = new Trigger();
   public static Trigger rightTrigger = new Trigger();
 
