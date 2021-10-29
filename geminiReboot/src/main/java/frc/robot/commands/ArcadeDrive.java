@@ -8,21 +8,22 @@ import frc.robot.RobotContainer;
 
 /** An example command that uses an example subsystem. */
 public class ArcadeDrive extends CommandBase {
+	//sets states from auto
   static boolean flip = false;
 	static boolean buttonState = false;
-	
+	//requires use of arcade drive subsystem in order to use command
     public ArcadeDrive() {
     	addRequirements(Robot.RobotDriveSystem);
     }
 
-
+	//what happens when command is first used
     public void initialize() {}
 
     //Sets if the drive orientation is reversed
     public static void setFlip(){
     	flip = !flip;
     }
-    
+    //drives robot using joystick input
     public void execute() {
     	//Drives the robot in different orientations based on a driver button input
     	if(flip){
