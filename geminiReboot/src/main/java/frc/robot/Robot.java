@@ -16,11 +16,11 @@ import frc.robot.subsystems.RobotDriveSystem;
  * project.
  */
 public class Robot extends TimedRobot {
-
+//initializes drive subsystem
 	public static final RobotDriveSystem RobotDriveSystem = new RobotDriveSystem();
-
+//where we would initialize auto commands if used
   private Command m_autonomousCommand;
-
+//initializes robot container 
   private RobotContainer m_robotContainer;
 
   /**
