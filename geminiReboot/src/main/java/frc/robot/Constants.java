@@ -14,7 +14,7 @@ package frc.robot;
  */
 public final class Constants {
 
-  //PWM
+//PWM
 	//RobotDrive
 	public static int left = 0;
 	public static int right = 1;
@@ -29,7 +29,7 @@ public final class Constants {
 	public static int gearIntake = 2;
 	public static int gearIntakeRotate = 8;
 
-	//Analog
+//Analog
 	public static int gearUltra = 3;
 	public static int turretPot = 4;
 	public static int gearIntakePot = 2;
@@ -38,13 +38,13 @@ public final class Constants {
 
 	//Relay
 	
-	// USB
+// USB
 	//Cameras
 	public static int cameraBoiler = 0;
 	public static int cameraGear = 1;
 	public static int cameraFront = 2;
 	
-	//DIO
+//DIO
 	//Encoders
 	public static int lEncoder1 = 0;
 	public static int lEncoder2 = 1;
@@ -54,7 +54,7 @@ public final class Constants {
 	public static int gearLimit = 4;
 
 	
-	//PID
+//PID
 	//Drive
 	public static double driveStraightP = 0.05;
 	public static double driveStraightI = 0.0;
@@ -80,7 +80,7 @@ public final class Constants {
 	public static double gearFloorD = 0.0;
 	
 
-	//Variables
+//Variables
 	//Drive
 	public static double driveForwardOffset = 0.25;
 	public static double driveTurnOffset = 0.25;
